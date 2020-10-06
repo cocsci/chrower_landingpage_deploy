@@ -2,7 +2,6 @@ const express = require("express");
 var request = require("request");
 
 const app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
 app.get("/", function (req, res) {
