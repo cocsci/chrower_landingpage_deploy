@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>API GATEWAY TEST</title>
+  </head>
+  <body>
+    <form method="POST" action="/" accept-charset="utf-8">
+      <input name="email" type="email" />
+      <input name="name" type="text" />
+      <button type="submit">Send</button>
+    </form>
+    <% if(locals.signup !== null){ %>
+    <p><%= locals.signup %></p>
+    <% } %> <% if(locals.error !== null){ %>
+    <p><%= locals.error %></p>
+    <% } %>
+  </body>
+</html>
