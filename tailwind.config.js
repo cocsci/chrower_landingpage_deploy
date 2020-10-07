@@ -17,7 +17,11 @@ module.exports = {
         'sub-headline': '28px',
         'article-headline': '20px',
         'article': '16px'
-      }
+      },
+      backgroundColor: theme => ({
+        'primary': '#313131'
+      })
+
     },
   },
   variants: {},
