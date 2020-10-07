@@ -10,6 +10,9 @@ module.exports = {
         "hero-pattern": "url('/images/hero_bg.png')",
       }),
     },
+    maxWidth: {
+      "3-4": "75%",
+    },
   },
   variants: {},
   plugins: [],
