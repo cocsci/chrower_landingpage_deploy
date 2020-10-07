@@ -23,6 +23,9 @@ module.exports = {
       })
 
     },
+    maxWidth: {
+      "3-4": "75%",
+    },
   },
   variants: {},
   plugins: [],
