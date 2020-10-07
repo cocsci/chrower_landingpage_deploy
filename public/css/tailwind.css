@@ -15,36 +15,3 @@
   */
 
 @import "tailwindcss/utilities";
-
-.hr-line {
-  font-size: 1rem;
-  background-color: #588977;
-  color: #588977;
-  font-size: 5px;
-  width: 200px;
-  margin-top: 25px;
-  margin-bottom: 40px;
-}
-
-.hr-line-short {
-  font-size: 1rem;
-  background-color: #588977;
-  color: #588977;
-  font-size: 5px;
-  width: 100px;
-  margin-top: 10px;
-  margin-bottom: 40px;
-  height: 5px;
-  align-self: center;
-}
-
-.hr-line-mini {
-  font-size: 1rem;
-  background-color: #588977;
-  color: #588977;
-  font-size: 1px;
-  width: 100px;
-  margin-top: 10px;
-  margin-bottom: 15px;
-  height: 3px;
-}
