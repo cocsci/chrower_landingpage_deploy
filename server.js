@@ -4,6 +4,7 @@ var request = require("request");
 const app = express();
 app.set("view engine", "ejs");
 app.use(express.static("public"));
+app.use(express.urlencoded({ extended: false }));
 app.get("/", function (req, res) {
   res.render("index");
 });
@@ -14,6 +15,7 @@ app.post("/", function (req, res) {
     headers: { "Content-Type": "application/json" },
     json: req.body,
   };
+  console.log(req.body);
   request.post(params, function (awserr, awsres, awsbody) {
     if (awserr) {
       console.log("------error------", awserr);
