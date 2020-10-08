@@ -29,8 +29,37 @@ app.post("/", function (req, res) {
   });
 });
 
+app.post("/unsubscription", function (req, res) {
+  let unsubscriptionText = "Deine Daten wurden erfolgreich gelöscht.";
+  res.render("unsubscription", {
+    unsubscription: unsubscriptionText,
+    error: null,
+  });
+  // const params = {
+  //   url: "https://60xnvroedk.execute-api.eu-central-1.amazonaws.com/dev/emails",
+  //   headers: { "Content-Type": "application/json" },
+  //   json: req.body,
+  // };
+  // console.log(req.body);
+  // request.post(params, function (awserr, awsres, awsbody) {
+  //   if (awserr) {
+  //     console.log("------error------", awserr);
+  //     let errorText = "Ein Fehler ist bei der Abmeldung passiert!";
+  //     res.render("index", { unsubscription: null, error: errorText });
+  //   } else {
+  //     console.log("------success--------", awsbody);
+  //     let unsubscriptionText = "Deine Daten wurden erfolgreich gelöscht.";
+  //     res.render("index", { unsubscription: unsubscriptionText, error: null });
+  //   }
+  // });
+});
+
 app.get("/impressum", function (req, res) {
   res.render("impressum");
+});
+
+app.get("/unsubscription", function (req, res) {
+  res.render("unsubscription");
 });
 
 app.get("/datenschutz", function (req, res) {
