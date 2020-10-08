@@ -15,3 +15,7 @@
   */
 
 @import "tailwindcss/utilities";
+
+p {
+  hyphens: auto;
+}
