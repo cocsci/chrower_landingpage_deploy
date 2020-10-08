@@ -9,20 +9,20 @@ app.get("/", function (req, res) {
   res.render("index");
 });
 
+const port = 80;
+
 app.post("/", function (req, res) {
   const params = {
     url: "https://60xnvroedk.execute-api.eu-central-1.amazonaws.com/dev/emails",
     headers: { "Content-Type": "application/json" },
     json: req.body,
   };
-  console.log(req.body);
+
   request.post(params, function (awserr, awsres, awsbody) {
     if (awserr) {
-      console.log("------error------", awserr);
       let errorText = "Ein Fehler ist bei der Anmeldung passiert!";
       res.render("index", { signup: null, error: errorText });
     } else {
-      console.log("------success--------", awsbody);
       let signupText = "Herzlichen Dank für anmelden!";
       res.render("index", { signup: signupText, error: null });
     }
@@ -30,28 +30,23 @@ app.post("/", function (req, res) {
 });
 
 app.post("/unsubscription", function (req, res) {
-  let unsubscriptionText = "Deine Daten wurden erfolgreich gelöscht.";
-  res.render("unsubscription", {
-    unsubscription: unsubscriptionText,
-    error: null,
+  const params = {
+    url: "https://60xnvroedk.execute-api.eu-central-1.amazonaws.com/dev/emails",
+    headers: { "Content-Type": "application/json" },
+    json: req.body,
+  };
+  request.post(params, function (awserr, awsres, awsbody) {
+    if (awserr) {
+      let errorText = "Ein Fehler ist bei der Abmeldung passiert!";
+      res.render("unsubscription", { unsubscription: null, error: errorText });
+    } else {
+      let unsubscriptionText = "Deine Daten wurden erfolgreich gelöscht.";
+      res.render("unsubscription", {
+        unsubscription: unsubscriptionText,
+        error: null,
+      });
+    }
   });
-  // const params = {
-  //   url: "https://60xnvroedk.execute-api.eu-central-1.amazonaws.com/dev/emails",
-  //   headers: { "Content-Type": "application/json" },
-  //   json: req.body,
-  // };
-  // console.log(req.body);
-  // request.post(params, function (awserr, awsres, awsbody) {
-  //   if (awserr) {
-  //     console.log("------error------", awserr);
-  //     let errorText = "Ein Fehler ist bei der Abmeldung passiert!";
-  //     res.render("index", { unsubscription: null, error: errorText });
-  //   } else {
-  //     console.log("------success--------", awsbody);
-  //     let unsubscriptionText = "Deine Daten wurden erfolgreich gelöscht.";
-  //     res.render("index", { unsubscription: unsubscriptionText, error: null });
-  //   }
-  // });
 });
 
 app.get("/impressum", function (req, res) {
@@ -66,6 +61,6 @@ app.get("/datenschutz", function (req, res) {
   res.render("datenschutz");
 });
 
-app.listen(3000, function () {
-  console.log("Example app listening on port 3000!");
+app.listen(port, function () {
+  console.log("Example app listening on port " + port.toString() + "!");
 });
