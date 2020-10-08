@@ -9,7 +9,7 @@ app.get("/", function (req, res) {
   res.render("index");
 });
 
-const port = 80;
+const port = 3000;
 
 app.post("/", function (req, res) {
   const params = {
@@ -35,7 +35,7 @@ app.post("/unsubscription", function (req, res) {
     headers: { "Content-Type": "application/json" },
     json: req.body,
   };
-  request.post(params, function (awserr, awsres, awsbody) {
+  request.delete(params, function (awserr, awsres, awsbody) {
     if (awserr) {
       let errorText = "Ein Fehler ist bei der Abmeldung passiert!";
       res.render("unsubscription", { unsubscription: null, error: errorText });
