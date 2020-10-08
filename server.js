@@ -29,6 +29,14 @@ app.post("/", function (req, res) {
   });
 });
 
+app.get("/impressum", function (req, res) {
+  res.render("impressum");
+});
+
+app.get("/datenschutz", function (req, res) {
+  res.render("datenschutz");
+});
+
 app.listen(3000, function () {
   console.log("Example app listening on port 3000!");
 });
