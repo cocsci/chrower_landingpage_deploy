@@ -270,6 +270,7 @@
                 name="name"
                 required
                 type="text"
+                pattern="[a-zA-Z\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u00FF\- ]+"
               />
               <label
                 class="absolute block text-gray-700 top-0 left-0 w-full px-3 py-2 leading-normal"
@@ -287,6 +288,7 @@
                 name="email"
                 required
                 type="email"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{​​​​​2,}​​​​​$"
               />
               <label
                 class="absolute block text-gray-700 top-0 left-0 w-full px-3 py-2 leading-normal"

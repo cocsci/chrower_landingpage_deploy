@@ -19,7 +19,7 @@ app.post("/", function (req, res) {
   request.post(params, function (awserr, awsres, awsbody) {
     if (awserr) {
       console.log("------error------", awserr);
-      let errorText = "Ein fehler hat passiert bei der Anmeldung!";
+      let errorText = "Ein Fehler ist bei der Anmeldung passiert!";
       res.render("index", { signup: null, error: errorText });
     } else {
       console.log("------success--------", awsbody);
