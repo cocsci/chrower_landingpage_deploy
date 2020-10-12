@@ -5,11 +5,12 @@ const app = express();
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
+const port = 80;
+
+
 app.get("/", function (req, res) {
   res.render("index");
 });
-
-const port = 3000;
 
 app.post("/", function (req, res) {
   const params = {
@@ -66,5 +67,5 @@ app.use((req, res,next)=>{
 });
 
 app.listen(port, function () {
-  console.log("Example app listening on port " + port.toString() + "!");
+  console.log("Chrower listening on port " + port.toString() + "!");
 });
