@@ -61,6 +61,10 @@ app.get("/datenschutz", function (req, res) {
   res.render("datenschutz");
 });
 
+app.use((req, res,next)=>{
+  res.status(404).render('404');
+});
+
 app.listen(port, function () {
   console.log("Example app listening on port " + port.toString() + "!");
 });
